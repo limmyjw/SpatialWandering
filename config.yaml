@@ -1,0 +1,95 @@
+baseurl: /
+languageCode: en-us
+paginate: '10'
+ignoreFiles:
+  - \.Rmd$
+  - \.Rmarkdown$
+  - _files$
+  - _cache$
+theme: Mainroad
+disqusShortname: ''
+googleAnalytics: ''
+Author:
+  avatar: img/avatar.png
+  bio: Jan Willem, data scientist en gis-specialist
+  name: Jan Willem van der Lichte
+Params:
+  authorbox: yes
+  description: Jan Willem's persooonlijke blog over van alles
+  logo:
+    image: img/SpatialWandering1030x256.png 
+  opengraph: yes
+  pager: yes
+  mainSections:
+    - hoe-zat-het-ook-alweer
+    - post
+    - inspiratie
+  post_meta:
+    - date
+    - categories
+  readmore: no
+  sidebar:
+    home: right
+    list: right
+    single: right
+    widgets:
+      - search
+      - recent
+      - categories
+      - taglist
+      - social
+  twitter_cards: no
+  widgets:
+    recent_num: 5
+    tags_counter: no
+    social:
+      github: limmyjw
+      twitter: limmyjw
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: 'https://www.spatialwandering.com'
+      weight: 1
+    - identifier: Post
+      name: Berichten
+      url: /Post/
+      weight: 2
+    - identifier: inspiratie
+      name: inspiratie
+      url: /inspiratie/
+      weight: 3
+    - identifier: hoe-zat-het-ook-alweer
+      name: hoe zat het ook alweer
+      url: /hoe-zat-het-ook-alweer
+      weight: 4
+    - identifier: Postgis
+      name: Postgis
+      url: /tags/Postgis
+      parent: hoe-zat-het-ook-alweer
+      weight: 1
+    - identifier: Qgis
+      name: Qgis
+      url: /tags/Qgis
+      parent: hoe-zat-het-ook-alweer
+      weight: 2
+    - identifier: R
+      name: R
+      url: /tags/R
+      parent: hoe-zat-het-ook-alweer
+      weight: 3
+    - identifier: Geoserver
+      name: Geoserver
+      url: /tags/Geoserver
+      parent: hoe-zat-het-ook-alweer
+      weight: 4
+    - identifier: links
+      name: links
+      url: /links/
+      weight: 6
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+

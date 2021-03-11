@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <link>/post/</link>
+    <description>Recent content on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Plaatjes</title>
+      <link>/post/2021-03-09-plaatjes/</link>
+      <pubDate>Tue, 09 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2021-03-09-plaatjes/</guid>
+      <description>Dit is een post over plaatjes
+Jan Willem</description>
+    </item>
+    
+    <item>
+      <title>Looproutes RPubs</title>
+      <link>/post/looproutes_rpubs/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/looproutes_rpubs/</guid>
+      <description>Mobiliteit kwetsbare groepenIn een overleg is gesproken over de mogelijkheid om de mobiliteit in beeld te brengen. Het ging daarbij in eerste instantie over mobiliteit te voet.Er is eigenlijk geen data aanwezig hierover.In eerste instantie is gekozen om theoretische looproutes naar een bepaalde bestemming, Koningsoord, te genereren.
+De aanpak:de xy coordinaten van de bestemming (Koningsoord) worden bepaaldMet behulp van de OSRM (Open Source Routing Machine) is een isochroon berekend van een afgesproken loopafstand van 20 minuten.</description>
+    </item>
+    
+    <item>
+      <title>Eerst post</title>
+      <link>/post/eerst-post/</link>
+      <pubDate>Thu, 21 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/eerst-post/</guid>
+      <description>bladblalkjdfaf</description>
+    </item>
+    
+  </channel>
+</rss>

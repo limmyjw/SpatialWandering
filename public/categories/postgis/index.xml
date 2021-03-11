@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Postgis on </title>
+    <link>/categories/postgis/</link>
+    <description>Recent content in Postgis on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 07 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/postgis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hoe zat het ook alweer Postgis</title>
+      <link>/hoe-zat-het-ook-alweer/2021-03-07-hoezat-het-ook-alweer-postgis/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/hoe-zat-het-ook-alweer/2021-03-07-hoezat-het-ook-alweer-postgis/</guid>
+      <description>Hoe zal het ook alweer postgisEerste post in het menu hoe zat het ook alweer –&amp;gt; Postgis</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+---
+authorbox: false
+date: "2021-03-10"
+menu: main
+sidebar: false
+title: Over mij
+---
+
+<div style= "float:right;position: relative; top: 00px;">
+![](/./about_files/avatar.jpg)
+</div>
+Na een opleiding aan de Verkeersakademie Tilburg, heb ik diverse banen gehad. Uiteindelijk ben ik bij de gemeente Tilburg terecht gekomen.
+
+Bij de gemeente ben ik opnieuw in contact gekomen met het ruimtelijke aspect van vraagstukken. Een collega, Toon van Hooijdonk, die vroeger ooit aardrijkskunde leraar was, nam me mee op ontdekkingsreis in de geografische informatie systemen. Van MGE, MapInfo, Geomedia, en later Oracle en ArcGIS.  
+
+Met enige trots kan ik nog steeds zeggen dat ik bij de eerste lichting hoorde die een cursus Oracle Spatial in Nederland heb gevolgd.  
+
+De IT werd in de loop der tijd steeds meer geprofessionaliseerd zoals dat zo mooi heet. Leuk vanuit beheersmatig opzicht, maar dodelijk om innoverend dingen uit te proberen. Dit leidde ertoe dat ik thuis zaken ging proberen. Leuk gezegd, maar een belangrijk probleem was wel om aan licenties te komen.  Hier lag voor mij de eerste kennismaking met opensource software.
+
+
+Met behulp van VirtualBox, heb ik mijn eerste Ubuntuserver gemaakt waarop ik Postgres/Postgis en geoserver geinstalleerd heb. Als desktopsoftware gebruikte ik Qgis. In het begin was het veel vallen en opstaan, maar als je iets voor ogen hebt, internet bij de hand, dan kom je een heel eind. En je leert ondertussen erg veel.  
+
+Terug op het werk nam ik de opgedane kennis uiteraard mee. Achteraf gezien veel te vroeg  zorgde ik ervoor dat het team instructie kreeg over webservices. Waarschijnlijk is er niet veel blijven hangen. Maar toch, op het werk werd langzaam maar zeker overgeschakeld naar ArcGIS Server, services werden een feit.
+
+Opensource blijft echter wel aan me kleven, het is ongelooflijk hoe sterk de combinatie Qgis/Postgis is. De laatste jaren ben ik me ook aan het verdiepen in R, in de verwachting om nog meer met data te kunnen doen, en om de verbinding te maken tussen spatial en datascience.
+
+Deze site is dan ook het resultaat van mijn ontwikkeling op het gebied van R. Tevens dient de site een  praktisch doel, namelijk om de leuke dingen die ik geleerd heb te delen, en om de praktische dingen die ik geleerd heb te documenteren, zodat ik het makkelijk terug kan vinden.
+
+Mochten anderen over deze site struikelen, ik hoop dat je er wat aan hebt.
+
+Jan Willem
+
+

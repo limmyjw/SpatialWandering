@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <link>/</link>
+    <description>Recent content on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Over mij</title>
+      <link>/about/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Na een opleiding aan de Verkeersakademie Tilburg, heb ik diverse banen gehad. Uiteindelijk ben ik bij de gemeente Tilburg terecht gekomen.
+Bij de gemeente ben ik opnieuw in contact gekomen met het ruimtelijke aspect van vraagstukken. Een collega, Toon van Hooijdonk, die vroeger ooit aardrijkskunde leraar was, nam me mee op ontdekkingsreis in de geografische informatie systemen. Van MGE, MapInfo, Geomedia, en later Oracle en ArcGIS.
+Met enige trots kan ik nog steeds zeggen dat ik bij de eerste lichting hoorde die een cursus Oracle Spatial in Nederland heb gevolgd.</description>
+    </item>
+    
+    <item>
+      <title>Plaatjes</title>
+      <link>/post/2021-03-09-plaatjes/</link>
+      <pubDate>Tue, 09 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2021-03-09-plaatjes/</guid>
+      <description>Dit is een post over plaatjes
+Jan Willem</description>
+    </item>
+    
+    <item>
+      <title>Hoe zat het ook alweer Postgis</title>
+      <link>/hoe-zat-het-ook-alweer/2021-03-07-hoezat-het-ook-alweer-postgis/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/hoe-zat-het-ook-alweer/2021-03-07-hoezat-het-ook-alweer-postgis/</guid>
+      <description>Hoe zal het ook alweer postgisEerste post in het menu hoe zat het ook alweer –&amp;gt; Postgis</description>
+    </item>
+    
+    <item>
+      <title>Hoe zat het ook alweer Qgis</title>
+      <link>/hoe-zat-het-ook-alweer/2021-03-07-hoe-zat-het-ook-alweer-qgis/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/hoe-zat-het-ook-alweer/2021-03-07-hoe-zat-het-ook-alweer-qgis/</guid>
+      <description>Dit zou de eerste post in Qgis moeten zijn bij het menu itemHoe zat het ook al weer –&amp;gt; Qgis</description>
+    </item>
+    
+    <item>
+      <title>Hoe zat het ook alweer R</title>
+      <link>/hoe-zat-het-ook-alweer/2021-03-07-hoez-at-het-ook-alweer-r/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/hoe-zat-het-ook-alweer/2021-03-07-hoez-at-het-ook-alweer-r/</guid>
+      <description>Hoe zit het ook alweer in R</description>
+    </item>
+    
+    <item>
+      <title>Hoe zit het ook alweer Geoserver</title>
+      <link>/hoe-zat-het-ook-alweer/2021-03-07-hoe-zit-het-ook-alweer-geoserver/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/hoe-zat-het-ook-alweer/2021-03-07-hoe-zit-het-ook-alweer-geoserver/</guid>
+      <description>Kijken of dit in geoserveer komt en werkt</description>
+    </item>
+    
+    <item>
+      <title>Interessante links</title>
+      <link>/links/2021-03-07-zomaar/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/links/2021-03-07-zomaar/</guid>
+      <description>In dit menu Item komen interessante links te staan.</description>
+    </item>
+    
+    <item>
+      <title>Inspiratie</title>
+      <link>/inspiratie/20210304-inspiratie/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/inspiratie/20210304-inspiratie/</guid>
+      <description>Dit is inspiratie
+R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+When you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</description>
+    </item>
+    
+    <item>
+      <title>Looproutes RPubs</title>
+      <link>/post/looproutes_rpubs/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/looproutes_rpubs/</guid>
+      <description>Mobiliteit kwetsbare groepenIn een overleg is gesproken over de mogelijkheid om de mobiliteit in beeld te brengen. Het ging daarbij in eerste instantie over mobiliteit te voet.Er is eigenlijk geen data aanwezig hierover.In eerste instantie is gekozen om theoretische looproutes naar een bepaalde bestemming, Koningsoord, te genereren.
+De aanpak:de xy coordinaten van de bestemming (Koningsoord) worden bepaaldMet behulp van de OSRM (Open Source Routing Machine) is een isochroon berekend van een afgesproken loopafstand van 20 minuten.</description>
+    </item>
+    
+    <item>
+      <title>Eerst post</title>
+      <link>/post/eerst-post/</link>
+      <pubDate>Thu, 21 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/eerst-post/</guid>
+      <description>bladblalkjdfaf</description>
+    </item>
+    
+    <item>
+      <title>Zoek resultaten</title>
+      <link>/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/search/</guid>
+      <description>Nothing on this page will be visible. This file exists solely to respond to /search URL.
+Setting a very low sitemap priority will tell search engines this is not important content.</description>
+    </item>
+    
+  </channel>
+</rss>

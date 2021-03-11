@@ -1,0 +1,222 @@
+---
+title: "Looproutes RPubs"
+author: "Jan Willem van der Lichte"
+date: '2021-02-28'
+slug: []
+categories: 
+tags: 
+  - Berkel-Enschot
+  - Looproutes
+  - R
+description: ''
+thumbnail: "img/loopaders.png"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+
+
+# 0 Voorbereiding libraries en database connectie 
+library(dplyr)
+library(sf)
+library(leaflet)
+library(htmltools)
+library(osrm)
+library(RPostgreSQL)
+library(DBI)
+#install.packages("BAMMtools")
+library(BAMMtools) #voorJenks
+library(lwgeom)
+library(RColorBrewer)
+library(leaflet.multiopacity)
+library(ggplot2)
+
+# 0.1 Connectie naar postgis lokaal 
+pgcon <- dbConnect("PostgreSQL", dbname = "IKC", host = "localhost", port="5432",user = "postgres", password = "postgres")
+
+
+
+# 1 creer punt bestemming bij koningsoord
+loc<-c(5.135976,51.587047)  #coordinaten als vector
+bron<-st_point(x = loc, dim = "XYZ") #coordinaten als sf -object
+
+# 2 bereken de isochrones voor 20 miniuten lopen
+
+# 3 lezen bereken de isochrones voor 20 miniuten lopen uit postgis
+iso_voet<-st_read(pgcon,"iso_voet")
+
+#kleuring aanbrengen op breekpunten van 2 minuten
+bks <- sort(c(unique(iso_voet$min), max(iso_voet$max))) 
+pal <- colorNumeric(palette = "YlGnBu", domain =bks)
+
+# 4 selecteer postgis tabel met alle adressen binnen de 20 minuten polygoon
+query_adres<-paste('select w.min, w.max, w.bron, ',
+                   'adr.straatnaam, adr.huisnummercompleet,',
+                   'adr.postcode6, adr.woonplaats, adr.gebruiksdoel,',
+                   'adr.adressoort, adr.identificatie, adr.geom',
+                   'from iso_voet w,',
+                   'adreswgs4326 adr',
+                   'where ST_Intersects(adr.geom, w.geometry)')
+adrs<-st_read(pgcon, query=query_adres)
+
+bks <- sort(c(unique(iso_voet$min), max(iso_voet$max))) 
+pal <- colorNumeric(palette = "YlGnBu", domain =bks)
+
+# 5 bereken de looproute van de adres naar de bestemming
+# 5.1 herkomst bestemmingstabel maken
+
+# 6 lezen van  de looproutes in postgis let op dat de "sleutelpc" ook in de tabel meegenomen wordt
+loop_k<-st_read(pgcon, "looproute_koningsoord")
+
+# 7 maak segmenten van de looproutes door de looproutes te splitsen bij de vertexen in postgis en maak er een tabel van
+# 8 groepeer en tel het aantal dezelfde segmenten
+# 9 lees de gegevens  van de segmenten van looproutes uit postgis presenteer de gegevens in qgis/r
+
+lpko_grp<-st_read(pgcon,"lpko_grp")
+#toewijzen jenks-klasse-categorie als veld 
+lpko_grp$cat<- as.numeric(cut(lpko_grp$aantal,breaks=getJenksBreaks(lpko_grp$aantal, 13), labels=c(0:11), right = FALSE))
+
+##EXTRA
+query_v<- "select *,
+st_distance(ST_Transform(st_startpoint(geometry),28992), ST_Transform(st_endpoint(geometry),28992)) AS afstand,
+(distance*1000)/st_distance(ST_Transform(st_startpoint(geometry),28992), ST_Transform(st_endpoint(geometry),28992))  as verhouding
+from looproute_koningsoord;"
+loop_k2<-st_read(pgcon, query=query_v)
+
+#hist(loop_k2$verhouding)
+#abline(v=median(loop_k2$verhouding), col="blue", lwd=3)
+#text( median(loop_k2$verhouding),0,"mediaan ", col = "red") 
+#plot(loop_k2$afstand, loop_k$distance*1000)
+#plot(loop_k2$verhouding,loop_k$distance*1000)
+#plot(loop_k2$distance*1000, loop_k$verhouding)
+
+barplot <- ggplot(loop_k2, aes(x=verhouding)) +
+           geom_histogram(color="darkblue", fill="lightblue")+
+           geom_vline(aes(xintercept=median(verhouding), color="mediaan"), linetype="dashed", size=1)+
+           ggtitle("Frequentie verhouding werkelijke afstand/hemelsbrede afstand") +
+           theme(plot.title = element_text(hjust = 0.5))+
+           xlab("Verhouding") + 
+           ylab("Frequentie") +
+           scale_color_manual(name = "legenda", values = c(mediaan = "red"))+
+           geom_text(aes(x=2, label=paste0("Mediaan\n",round(median(verhouding),3)), y=1750))+
+           theme(plot.background = element_rect(fill = "#FFF8ED", color = "#556B56"), # Change plot background
+                 legend.background = element_rect(fill = "#FFF8ED", color = "#556B56"),
+                 legend.key = element_rect(fill = "#FFF8ED")) # Change legend background
+  
+barplot
+
+
+loop_k_nosf<- st_set_geometry(loop_k2,NULL)
+adrsverh<-merge(adrs, loop_k_nosf[,c("identificatie","verhouding")], by = c("identificatie"))
+
+
+
+  
+
+#inlezen vierkantstatistieken cbs uit postgis
+cbs_vk100_2019_pg<-st_read(pgcon,"cbs_vk100_2019")
+
+iso_voet<-st_read(pgcon,"iso_voet")
+cbs_vk100_2019_65eo<-cbs_vk100_2019_pg%>%select("c28992r100","aantal_inwoners_65_jaar_en_ouder", "geom")
+cbs_vk100_2019_65eo<-st_transform(cbs_vk100_2019_65eo, 4326) #Coordinaatstelsel wijzigen
+dat<-st_intersection(cbs_vk100_2019_65eo, iso_voet)
+dat$aantal_inwoners_65_jaar_en_ouder<-na_if(dat$aantal_inwoners_65_jaar_en_ouder, -99997)
+
+##kleur palletten
+#kleur isochonen
+bks <- sort(c(unique(iso_voet$min), max(iso_voet$max))) 
+pal <- colorNumeric(palette = "YlGnBu", domain =bks)
+
+#Kleur kwantielerdeling adressen
+mypalette<-brewer.pal(4,"Accent")
+qpal <- colorQuantile("Accent", adrsverh$verhouding, n = 4)
+
+#kleur vierkantstatistieken
+qpal_inw <- colorBin("Greens", dat$aantal_inwoners_65_jaar_en_ouder, bins = 5, na.color="pink")
+
+
+
+koningsoord_zw<-leaflet()%>%
+  addTiles(urlTemplate = "http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png", 
+           attribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>', group="OSM mono")%>%
+  addTiles(group="OSM")%>%
+  addPolylines(data=lpko_grp, weight= lpko_grp$cat , color="red",fillOpacity=1, group="loopader" )%>%
+  addPolylines(data=loop_k2,weight = 1,color="green", group="looproutes")%>%
+  addPolygons(data=iso_voet,color=~pal(max), fillOpacity=.5,weight = 1, popup= ~htmlEscape(paste0(min, " tot ",max, " minuten lopen")), group="isochroon")%>%
+  addPolygons(data=adrs,color="blue", fillOpacity=.1,weight = 1,group = "adressen")%>%
+  addPolygons(data=adrsverh,color=~qpal(verhouding), fillOpacity=1,weight = 1,group = "kwartiel")%>%
+  addPolygons(data=dat,stroke = TRUE, 
+              fillOpacity=.8, color = "black", opacity = .5,weight=.5,
+              fillColor=~qpal_inw(aantal_inwoners_65_jaar_en_ouder), group="inwoners")%>%
+  addCircleMarkers(data=bron, radius =4,color="red", label="Koningsoord", labelOptions = labelOptions(noHide = T),group = "Koningsoord")%>%
+  addLegend(data=adrsverh,"bottomleft", pal = qpal, values = ~verhouding,group =c("kwartiel"),
+            title = "Kwartielen",
+            opacity = 1)%>%
+  addLegend(data=iso_voet,"bottomright", pal = pal, values = ~max,group = c("isochroon"),
+            title = "Aantal min lopen",
+            opacity = 1)%>%
+  addLegend(data=dat,"bottomleft", pal = qpal_inw, values = ~aantal_inwoners_65_jaar_en_ouder,group=c("inwoners"),
+            title = "aantal inwoners >=65 jaar",
+            labFormat=labelFormat(),
+            opacity = 1)%>%
+  addLayersControl(
+    baseGroups = c("OSM mono", "OSM"),
+    overlayGroups = c("Koningsoord","isochroon", "adressen", "looproutes",  "loopader", "kwartiel", "inwoners"),
+    options = layersControlOptions(collapsed = FALSE))%>%
+  hideGroup(c("isochroon", "adressen", "looproutes",  "loopader", "kwartiel", "inwoners" ))
+
+```
+
+
+## Mobiliteit kwetsbare groepen
+
+
+In een overleg is gesproken over de mogelijkheid om de mobiliteit in beeld te brengen. Het ging daarbij in eerste instantie over mobiliteit te voet.
+Er is eigenlijk geen data aanwezig hierover. 
+In eerste instantie is gekozen om theoretische looproutes naar een bepaalde bestemming, Koningsoord, te genereren.
+
+### De aanpak:
+
+1) de xy coordinaten van de bestemming (Koningsoord) worden bepaald
+2) Met behulp van de OSRM (Open Source Routing Machine) is een isochroon berekend van een afgesproken loopafstand van 20 minuten.** 
+3) Vervolgens zijn alle adressen geselecteerd die binnen de isochroon vallen.
+4) Nu alle adressen bekend zijn, is per adres met behulp van OSRM de kortste looproute bepaald naar de bestemming Koningsoord.
+5) Iedere looproute is vervolgens geknipt op de knikpunten van de route. 
+6) Alle unieke lijnstukjes worden geteld, zodat bekend wordt hoe vaak dat lijnstukje door een looproute gebruikt wordt.
+7) Tot slot worden de lijnstukjes in kaart gepresenteerd, waarbij de dikte van het lijnstuk samenhangt met het aantal keer dat het lijnstuk gebruikt wordt, de loopader. 
+
+
+
+** De OSRM is lokaal in een docker omgeving geinstalleerd, zodat makkelijk een groot aantal bevragingen gedaan konden worden. De data die ten grondslag liggen aan de OSRM is OpenStreetmap, het Open Streetmap bestand dat gebruikt is is van 18-11-2020.  
+
+
+
+### Aanvullende informatie
+De theoretisch gelopen afstand is vergeleken met de hemelsbrede afstand. 
+In een grafiek gezet ziet dat er als volgt uit. 
+Tevens is de mediaan in de grafiek opgenomen. 
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+barplot
+```
+
+Op zich interessant om de verhouding werkelijk/hemelsbreed te zien, mooier wordt het om deze gegevens ook in kaart te zetten, waar liggen de adressen met een grote verhouding. Dit is weergegeven in de kaartlaag kwartiel.
+
+### Contextgegevens
+Tot slot is er de mogelijkheid om te spelen met context gegevens. In dit geval is er gekozen voor de CBS 100x100 meter vierkantstatistieken van 2019, en de variabele inwoners>=65 jaar. 
+
+
+### Opmerkingen
+Opvallend is dat als er wordt ingezoomd op bepaalde delen van de kaart, het opvalt dat er soms enkele lijntjes te zien zijn die eigenlijk bij andere opgeteld hadden horen te worden. OSRM lijkt dus af en toe andere routes te berekenen.
+
+### Kaart
+
+```{r echo=FALSE, out.width='100%'}
+koningsoord_zw 
+
+```
+
+

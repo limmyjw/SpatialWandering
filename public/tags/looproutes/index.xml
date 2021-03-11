@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Looproutes on </title>
+    <link>/tags/looproutes/</link>
+    <description>Recent content in Looproutes on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/looproutes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Looproutes RPubs</title>
+      <link>/post/looproutes_rpubs/</link>
+      <pubDate>Sun, 28 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/looproutes_rpubs/</guid>
+      <description>Mobiliteit kwetsbare groepenIn een overleg is gesproken over de mogelijkheid om de mobiliteit in beeld te brengen. Het ging daarbij in eerste instantie over mobiliteit te voet.Er is eigenlijk geen data aanwezig hierover.In eerste instantie is gekozen om theoretische looproutes naar een bepaalde bestemming, Koningsoord, te genereren.
+De aanpak:de xy coordinaten van de bestemming (Koningsoord) worden bepaaldMet behulp van de OSRM (Open Source Routing Machine) is een isochroon berekend van een afgesproken loopafstand van 20 minuten.</description>
+    </item>
+    
+  </channel>
+</rss>

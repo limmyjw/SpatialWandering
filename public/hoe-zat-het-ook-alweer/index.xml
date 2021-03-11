@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <link>/hoe-zat-het-ook-alweer/</link>
+    <description>Recent content on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 07 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="/hoe-zat-het-ook-alweer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hoe zat het ook alweer Postgis</title>
+      <link>/hoe-zat-het-ook-alweer/2021-03-07-hoezat-het-ook-alweer-postgis/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/hoe-zat-het-ook-alweer/2021-03-07-hoezat-het-ook-alweer-postgis/</guid>
+      <description>Hoe zal het ook alweer postgisEerste post in het menu hoe zat het ook alweer –&amp;gt; Postgis</description>
+    </item>
+    
+    <item>
+      <title>Hoe zat het ook alweer Qgis</title>
+      <link>/hoe-zat-het-ook-alweer/2021-03-07-hoe-zat-het-ook-alweer-qgis/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/hoe-zat-het-ook-alweer/2021-03-07-hoe-zat-het-ook-alweer-qgis/</guid>
+      <description>Dit zou de eerste post in Qgis moeten zijn bij het menu itemHoe zat het ook al weer –&amp;gt; Qgis</description>
+    </item>
+    
+    <item>
+      <title>Hoe zat het ook alweer R</title>
+      <link>/hoe-zat-het-ook-alweer/2021-03-07-hoez-at-het-ook-alweer-r/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/hoe-zat-het-ook-alweer/2021-03-07-hoez-at-het-ook-alweer-r/</guid>
+      <description>Hoe zit het ook alweer in R</description>
+    </item>
+    
+    <item>
+      <title>Hoe zit het ook alweer Geoserver</title>
+      <link>/hoe-zat-het-ook-alweer/2021-03-07-hoe-zit-het-ook-alweer-geoserver/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/hoe-zat-het-ook-alweer/2021-03-07-hoe-zit-het-ook-alweer-geoserver/</guid>
+      <description>Kijken of dit in geoserveer komt en werkt</description>
+    </item>
+    
+  </channel>
+</rss>

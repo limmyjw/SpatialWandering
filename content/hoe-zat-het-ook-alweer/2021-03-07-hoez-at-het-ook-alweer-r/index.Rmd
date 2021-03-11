@@ -1,0 +1,15 @@
+---
+title: Hoe zat het ook alweer R
+author: Jan Willem
+date: '2021-03-07'
+slug: []
+categories:
+  - R
+tags:
+  - R
+description: ''
+thumbnail: ''
+---
+
+
+Hoe zit het ook alweer in R

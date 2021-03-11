@@ -1,0 +1,21 @@
+---
+title: Plaatjes
+author: Jan Willem
+date: '2021-03-09'
+slug: []
+categories:
+tags:
+description: ''
+thumbnail: ''
+---
+
+
+Dit is een post over plaatjes
+
+<div style= "float:right;position: relative; top: 00px;">
+![](images/avatar.jpg)
+</div>
+
+Jan Willem
+
+![](images/avatar.jpg)

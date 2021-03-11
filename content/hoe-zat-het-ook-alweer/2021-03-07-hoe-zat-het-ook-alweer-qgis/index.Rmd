@@ -1,0 +1,16 @@
+---
+title: Hoe zat het ook alweer Qgis
+author: Jan Willem
+date: '2021-03-07'
+slug: []
+categories:
+  - Qgis
+tags:
+  - Qgis
+description: ''
+thumbnail: ''
+---
+
+
+Dit zou de eerste post in Qgis moeten zijn bij het menu item
+Hoe zat het ook al weer --> Qgis
