@@ -1,0 +1,35 @@
+---
+title: Werken met gpkg
+author: Jan Willem
+date: '2023-10-09'
+slug: []
+categories:
+  - R
+tags:
+  - R
+  - gpkg
+description: 'Lezen en schijven en geopackages'
+thumbnail: ''
+---
+
+
+
+<p>Een van de dingen die ik telkens vergeet is hoe je makkelijk kunt omgaan met geopackage-bestanden (.gpkg).
+Het is het standaarduitwisselformaat van Geonovum dat op de pas-toe-of-leg-uit lijst staat. Zie ook: <a href="https://www.geonovum.nl/geo-standaarden/geopackage" class="uri">https://www.geonovum.nl/geo-standaarden/geopackage</a>.</p>
+<p>Eigenlijk is het vrij simpel. De sf-library is hiervoor geschikt.</p>
+<p>Om te zien welke lagen er in een .gpkg opgeslagen zitten, gebuik je het commando:</p>
+<pre class="r"><code>library(sf)
+layers &lt;- st_layers(&quot;museum.gpkg&quot;)</code></pre>
+<p>Dit levert een list op, met een aantal velden. Eén van die velden is name. Dit geeft de namen weer van de beschikbare lagen in het .gpkg bestand.</p>
+<pre class="r"><code>layers$name
+
+ [1] &quot;museum_afbakening_gebied&quot; &quot;adressen_depont&quot;         
+ [3] &quot;adressen_textielmuseum&quot;   &quot;looproutes_depont&quot;       
+ [5] &quot;loopader_depont&quot;          &quot;loopader_textielmuseum&quot;  
+ [7] &quot;isochroon_depont&quot;         &quot;isochroon_textielmuseum&quot; 
+ [9] &quot;loopaders_gezamelijk&quot;     &quot;looproutes_textielmuseum&quot;
+[11] &quot;bestemming&quot;               &quot;afbakening4326&quot;          
+[13] &quot;qgis_projects&quot;</code></pre>
+<p>Het daadwerkelijk inlezen van een laag in R gebeurt als volgt:</p>
+<pre class="r"><code>library(sf)
+isotextiel &lt;- st_read(&quot;museum.gpkg&quot;, layer=&quot;isochroon_textielmuseum&quot;)</code></pre>
