@@ -1,0 +1,44 @@
+---
+title: Werken met gpkg
+author: Jan Willem
+date: '2023-10-09'
+slug: []
+categories:
+  - R
+tags:
+  - R
+  - gpkg
+description: 'Lezen en schijven en geopackages'
+thumbnail: ''
+---
+Een van de dingen die ik telkens vergeet is hoe je makkelijk kunt omgaan met geopackage-bestanden (.gpkg).
+Het is het standaarduitwisselformaat van Geonovum dat op de pas-toe-of-leg-uit lijst staat. Zie ook: https://www.geonovum.nl/geo-standaarden/geopackage.
+
+Eigenlijk is het vrij simpel. De sf-library is hiervoor geschikt.
+
+Om te zien welke lagen er in een .gpkg opgeslagen zitten, gebuik je het commando:
+```r
+library(sf)
+layers <- st_layers("museum.gpkg")
+```
+
+Dit levert een list op, met een aantal velden. Eén van die velden is name. Dit geeft de namen weer van de beschikbare lagen in het .gpkg bestand.
+
+```r
+layers$name
+
+ [1] "museum_afbakening_gebied" "adressen_depont"         
+ [3] "adressen_textielmuseum"   "looproutes_depont"       
+ [5] "loopader_depont"          "loopader_textielmuseum"  
+ [7] "isochroon_depont"         "isochroon_textielmuseum" 
+ [9] "loopaders_gezamelijk"     "looproutes_textielmuseum"
+[11] "bestemming"               "afbakening4326"          
+[13] "qgis_projects"
+```
+
+Het daadwerkelijk inlezen van een laag in R gebeurt als volgt:
+```r
+library(sf)
+isotextiel <- st_read("museum.gpkg", layer="isochroon_textielmuseum")
+```
+
