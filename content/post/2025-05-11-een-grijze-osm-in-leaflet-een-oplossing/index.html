@@ -1,5 +1,5 @@
 ---
-title: Een grijze OSM in leaflet
+title: Een grijze OSM in Leaflet, een oplossing
 author: Jan Willem
 date: '2025-05-11'
 slug: []
@@ -45,4 +45,3 @@ leaflet() %&gt;%
 <p>En dat levert deze kaart:</p>
 <div class="leaflet html-widget html-fill-item" id="htmlwidget-1" style="width:100%;height:480px;"></div>
 <script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"className":"grayscale-tiles","attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[52.0907,5.1214,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Utrecht",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[52.0907,52.0907],"lng":[5.1214,5.1214]}},"evals":[],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (\n    function(el, x) {\n      var css = document.createElement('style');\n      css.type = 'text/css';\n      css.innerHTML = '.grayscale-tiles img { filter: grayscale(100%) !important; }';\n      document.head.appendChild(css);\n    }\n  ).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
-<p>Dus dat ziet er een stuk beter uit!</p>
