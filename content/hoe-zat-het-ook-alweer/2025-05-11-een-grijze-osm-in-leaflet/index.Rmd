@@ -12,7 +12,7 @@ thumbnail: ''
 ---
 Na veel zoeken liep ik vandaag tegen een youtube video aan: https://www.youtube.com/watch?v=DD1NXE9i8TE  Hierin ik zag dat de osm in een grijstint gerendered kan worden. Dit wist ik niet. Ik was er erg blij mee want ik miste de oude mooie grijze osm kaart. 
 
-Met name als de kaart maar een referentie is van wat je eigenlijk wil laten zien, is de grijze achtergrond geweldig.
+Met name als de kaart slechts een referentie is van wat je eigenlijk wil laten zien, is de grijze achtergrond geweldig.
 
 Maar hoe krijg ik dat nu in R? Dat was mijn volgende vraag. Wat zoeken leverde niks op, toen ChatGTP maar eens gevraagd, en die kwam met het antwoord:
 
