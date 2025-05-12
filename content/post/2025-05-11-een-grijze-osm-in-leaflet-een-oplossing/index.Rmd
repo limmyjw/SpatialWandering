@@ -42,7 +42,7 @@ leaflet() %>%
 
 En dat levert deze kaart:
 
-```{r message=FALSE, warning=FALSE, include=FALSE}
+```{r}
 library(leaflet)
 library(htmlwidgets)
 
@@ -59,8 +59,9 @@ toonkaart<-leaflet() %>%
       document.head.appendChild(css);
     }
   ")
+toonkaart
 ```
 
-```{r echo=FALSE, out.width='100%'}
+```{r echo=FALSE, out.width='100%', results='hide'}
 toonkaart
 ```
