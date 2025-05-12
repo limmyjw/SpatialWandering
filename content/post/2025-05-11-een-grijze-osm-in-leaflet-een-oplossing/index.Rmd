@@ -42,7 +42,7 @@ leaflet() %>%
 
 En dat levert deze kaart:
 
-```{r}
+```{r echo=FALSE, out.width='100%'}
 library(leaflet)
 library(htmlwidgets)
 
