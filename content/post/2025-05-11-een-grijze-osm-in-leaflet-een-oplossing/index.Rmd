@@ -17,10 +17,6 @@ Met name als de kaart slechts een referentie is van wat je eigenlijk wil laten z
 
 Maar hoe krijg ik dat nu in R? Dat was mijn volgende vraag. Wat zoeken leverde niks op, toen ChatGTP maar eens gevraagd, en die kwam met het antwoord:
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 ```r
 library(leaflet)
 library(htmlwidgets)
@@ -46,7 +42,7 @@ En dat levert deze kaart:
 library(leaflet)
 library(htmlwidgets)
 
-toonkaart<-leaflet() %>%
+toonkaart <- leaflet() %>%
   addTiles(options = tileOptions(
     className = "grayscale-tiles"
   )) %>%
@@ -59,9 +55,6 @@ toonkaart<-leaflet() %>%
       document.head.appendChild(css);
     }
   ")
-saveWidget(toonkaart, file ="toonkaart.html")
-```
 
-```{r echo=FALSE, out.width='100%', results='hide'}
 toonkaart
 ```
