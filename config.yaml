@@ -4,11 +4,10 @@ paginate: '10'
 ignoreFiles:
   - \.Rmd$
   - \.Rmarkdown$
-  - _files$
   - _cache$
 theme: Mainroad
 disqusShortname: ''
-googleAnalytics: 'UA-191940162-1'
+googleAnalytics: ''
 Author:
   avatar: img/avatar.png
   bio: Jan Willem, data scientist en gis-specialist
@@ -92,4 +91,3 @@ outputs:
     - HTML
     - RSS
     - JSON
-
